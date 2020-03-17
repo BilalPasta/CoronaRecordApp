@@ -24,16 +24,15 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native';
+import {Navigation} from './src/screens/route';
 import { Table, ConciseInfo, BoxView, LineGraph } from './src/shared';
 const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <ConciseInfo />
+  return <Navigation/>
+
+   
+          {/* <ConciseInfo />
           <BoxView
             headerText={"ACTIVE CASES"}
 
@@ -49,12 +48,9 @@ const App: () => React$Node = () => {
           <LineGraph
             headerText={"Death Cases"}
           />
-          <Table />
+          <Table /> */}
+    
 
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
 };
 
 const styles = StyleSheet.create({
