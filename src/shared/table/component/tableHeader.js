@@ -1,22 +1,14 @@
 import React from 'react';
-import {View,Text} from 'react-native';
+import {ScrollView,Text,View} from 'react-native';
 import { styles } from './style';
 
-const headerData=["Country,\nOther ","Total\nCases ","New\nCases ","Total\nDeaths ","Total\nRecovered ","Active\nCases ","Serious,\nCritical ","Tot Cases/\n1M pop"]
-// Country,
-// Other	Total
-// Cases	New
-// Cases	Total
-// Deaths	New
-// Deaths	Total
-// Recovered	Active
-// Cases	Serious,
-// Critical	Tot Cases/
-// 1M pop
+const headerData=["Country,\nOther ","Total\nCases ","New\nCases ","Total\nDeaths ","New\nDeaths ","Total\nRecovered","Active,\nCases ","Serious\nCritical"]
 
 export  const TableHeader=()=>{
-return (<View style={styles.row}>
-{headerData.map((value,index)=><Text key={index}>{value}</Text>)
+return (<View style={styles.row} horizontal={true}>
+{headerData.map((value,index)=><View key={index} style={{ borderRightWidth: 1, borderColor: "#ddd",flex:1 }}>
+            <Text  style={{  textAlign: "center",fontSize:10,fontWeight:"bold" }} >{value}</Text>
+        </View>)
 }
 </View>)
 

@@ -24,6 +24,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import {Item} from './src/shared/stories/component/item';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import {Navigation} from './src/screens/route';
@@ -93,3 +94,44 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+
+
+
+
+
+
+// 
+// import React from 'react';
+// import { View, Text } from 'react-native'
+// import { styles } from './style';
+// const headerData = ["Country,\nOther ", "Total\nCases ", "New\nCases ", "Total\nDeaths ", "Total\nRecovered ", "Active\nCases ", "Serious,\nCritical ", "Tot Cases/\n1M pop"]
+
+// export const TableItem = (props) => {
+//     return (<View style={styles.row}>
+//         {/* {headerData.map((value,index)=><View style={{borderRightWidth:1,borderColor:"#ddd",
+// }}><Text key={index} style={{width:70,textAlign:"center"}} >{value}</Text></View>) */}
+//         <View style={{ borderRightWidth: 1, borderColor: "#ddd" }}>
+//             <Text  style={{ width: 70, textAlign: "center" }} >{props.name}</Text>
+//         </View>
+//         <View style={{
+//             borderRightWidth: 1, borderColor: "#ddd"
+//         }}>
+//             <Text  style={{ width: 70, textAlign: "center" }} >{props.total_cases}</Text>
+//         </View>
+//         <View style={{
+//             borderRightWidth: 1, borderColor: "#ddd"
+//         }}>
+//             <Text  style={{ width: 70, textAlign: "center" }} >{props.new_cases}</Text></View>
+//         <View style={{ borderRightWidth: 1, borderColor: "#ddd" }}>
+//             <Text  style={{ width: 70, textAlign: "center" }} >{props.total_deaths}</Text></View>
+//         <View style={{ borderRightWidth: 1, borderColor: "#ddd" }}>
+//             <Text  style={{ width: 70, textAlign: "center" }} >{props.new_deaths}</Text></View>
+//         <View style={{
+//             borderRightWidth: 1, borderColor: "#ddd",
+//         }}><Text  style={{ width: 70, textAlign: "center" }} >{props.total_recovered}</Text></View>
+//         <View style={{ borderRightWidth: 1, borderColor: "#ddd" }}>
+//             <Text  style={{ width: 70, textAlign: "center" }} >{props.active_cases}</Text></View>
+
+//     </View>)
+// }
