@@ -39,8 +39,8 @@ const [storiesData,updateStoriesData]=useState(null);
          data={storiesData}            
          renderItem={({ item,index }) => <Item itemList={item} index={index} {...props}/>}
          keyExtractor={item=>item[0]}
-        
-        />:<ActivityIndicator  size={"large"} color="#4972a6" style={{alignSelf:"center"}}/>}
+    
+        />:<ActivityIndicator  size={"large"} color="#4972a6" />}
          
         
         </View>)

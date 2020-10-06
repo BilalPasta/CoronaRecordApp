@@ -21,11 +21,11 @@ export  const Item=(props)=>{
         </View>
         })} */}
         {props.itemList.map((value,key)=>key>0? <View style={{width:"90%",alignSelf:"center",borderBottomWidth:1,borderColor:"#ddd",paddingVertical:12}} key={ value.heading}>
-             <Text style={{fontWeight:"bold",fontSize:20,textAlign:"center"}}>
+             <Text style={{fontWeight:"bold",fontSize:20,textAlign:"center",color:"#494949"}}>
     {value.heading}</Text>
-            <Text>
+            <Text style={{color:"#494949"}}>
     {value.text}</Text>
-    </View>:<View key={value} style={{width:"85%",backgroundColor:"#0284fc",padding:8,borderTopRightRadius:8,borderBottomRightRadius:8,marginTop:10}}><Text style={{textAlign:"center",fontSize:15,color:"#fff",fontWeight:"bold"}}>{value}</Text></View>)}
+    </View>:<View key={value} style={{width:"85%",backgroundColor:"#d8c8b5",padding:8,borderTopRightRadius:20,borderBottomRightRadius:20,marginTop:10}}><Text style={{textAlign:"center",fontSize:15,color:"#fff",fontWeight:"bold"}}>{value}</Text></View>)}
         
         </View>)
 }

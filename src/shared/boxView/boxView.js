@@ -12,17 +12,17 @@ export  const BoxView=(props)=>{
             </View>
             <View style={{flex:1,justifyContent:"center"}}>
             <View style={styles.column}>
-                        <Text style={{fontWeight:"bold"}}>{props.value.replace(/\n/g, "")}
+                        <Text style={{fontWeight:"bold",color:"#494949"}}>{props.value.replace(/[\n\s]/g, "")}
                             </Text>
-                            <Text style={{fontWeight:"bold"}}>{props.name.replace(/\n/g, "")}
+                            <Text style={{fontWeight:"bold",color:"#494949"}}>{props.name.replace(/[\n\s]/g, "")}
 
                             </Text>
                 </View>
                 <View style={styles.row}>
                     {props.extraInfo.map((info,index)=><View key={index} style={{flex:1,justifyContent:"center",alignItems:"center"}}>
-                        <Text style={{textAlign:"center"}}>{info.value.replace(/\n\s/g, "")}
+                        <Text style={{textAlign:"center",color:"#494949"}}>{info.value.replace(/[\n\s]/g, "")}
                             </Text>
-                            <Text style={{textAlign:"center"}}>{info.name.replace(/\n\s/g, "")}
+                            <Text style={{textAlign:"center",color:"#494949"}}>{info.name.replace(/[\n\s]/g, "")}
 
                             </Text>
                         </View>)}

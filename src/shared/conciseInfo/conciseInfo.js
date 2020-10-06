@@ -8,6 +8,7 @@ import {BoxView} from '../boxView/boxView';
 import {Table} from '../../shared'
 import { GREY, SKY_BLUE, GREEN, RED } from '../colorConstant/color'
 import axios from 'axios';
+import SplashScreen from 'react-native-splash-screen'
 export const ConciseInfo = (props) => {
     const [data, updateData] = useState(null);
     useEffect(() => {
@@ -17,6 +18,7 @@ export const ConciseInfo = (props) => {
                 if (response.status == 200) {
                     updateData(response.data)
                 }
+                SplashScreen.hide()
             })
             .catch(function (error) {
                 // handle error
@@ -29,6 +31,8 @@ export const ConciseInfo = (props) => {
                 if (response.status == 200) {
                     updateData(response.data)
                 }
+                SplashScreen.hide()
+
             })
             .catch(function (error) {
                 // handle error
@@ -77,6 +81,6 @@ export const ConciseInfo = (props) => {
          {/* <Table {...props}/> */}
          {props.children}
          </View>
-        </View>:<View style={{flex:1,justifyContent:"center",alignItems:"center"}}><ActivityIndicator size={"large"} style={{alignSelf:"center"}} color="#4972a6" /></View>} 
+        </View>:<View style={{flex:1,alignItems:"center",justifyContent:"center"}}><ActivityIndicator size={"large"}  color="#4972a6" /></View>} 
     </View>)
 }

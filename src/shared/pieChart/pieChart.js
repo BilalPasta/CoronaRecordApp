@@ -61,35 +61,35 @@ console.log(props.data,"pie,pie")
             {
               name: props.data[0].name,
               population: Number(props.data[0].total_cases.replace(/,/g,"")),
-              color: "rgba(112, 172, 70, 1)",
+              color: "#81ddc6",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             },
             {
               name: props.data[1].name,
               population: Number(props.data[1].total_cases.replace(/,/g,"")),
-              color: "#4372c5",
+              color: "#f45d58",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             },
             {
               name: props.data[2].name,
               population: Number(props.data[2].total_cases.replace(/,/g,"")),
-              color: "#ffc200",
+              color: "#50514f",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             },
             {
               name: props.data[3].name,
               population: Number(props.data[3].total_cases.replace(/,/g,"")),
-              color: "#264479",
+              color: "#eec583",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             },
             {
               name: props.data[4].name,
               population: Number(props.data[4].total_cases.replace(/,/g,"")),
-              color: "#987302",
+              color: "#5997cf",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             }
@@ -100,35 +100,35 @@ console.log(props.data,"pie,pie")
             {
               name: props.data[0].name,
               population: Number(props.data[0].total_deaths.replace(/,/g,"")),
-              color: "rgba(112, 172, 70, 1)",
+              color: "#81ddc6",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             },
             {
               name: props.data[1].name,
               population: Number(props.data[1].total_deaths.replace(/,/g,"")),
-              color: "#4372c5",
+              color: "#f45d58",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             },
             {
               name: props.data[2].name,
               population: Number(props.data[2].total_deaths.replace(/,/g,"")),
-              color: "#ffc200",
+              color: "#50514f",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             },
             {
               name: props.data[3].name,
               population: Number(props.data[3].total_deaths.replace(/,/g,"")),
-              color: "#264479",
+              color: "#eec583",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             },
             {
               name: props.data[4].name,
               population: Number(props.data[4].total_deaths.replace(/,/g,"")),
-              color: "#987302",
+              color: "#5997cf",
               legendFontColor: "#7F7F7F",
               legendFontSize: 15
             }
@@ -171,6 +171,7 @@ return(<View style={{justifyContent:"center",alignItems:"center",width:"90%",ali
 <Text style={{textAlign:"center",fontSize:15,fontWeight:"bold"}}>Coronavirus: worst affected areas, by confirmed cases and deaths
     </Text>
     <PieChart
+    animate={true}
     data={totalCases}
     width={Dimensions.get("window").width}
     height={220}

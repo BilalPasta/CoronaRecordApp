@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Carousel from 'react-native-snap-carousel';
 
-import { View, Text,Dimensions } from 'react-native';
+import { View, Text,Dimensions, ActivityIndicator } from 'react-native';
 
 const _renderItem = ({item, index}) => {
     return (
-        <View style={{flex:1,width:"95%",alignSelf:"center",marginTop:10}}>
-            <Text style={{textAlign:"center",fontSize:14,color:"#fff",backgroundColor:"#4972a6",padding:10,borderRadius:12}}>{item}</Text>
+        <View style={{flex:1,width:"98%",marginTop:10,opacity:0.77,alignSelf:"center"}}>
+            <Text style={{textAlign:"center",fontSize:15,color:"#fff",backgroundColor:"#0a4958",padding:10,borderRadius:10}}>{item}</Text>
         </View>
     );
 }
@@ -40,16 +40,18 @@ export const CurrentNews = (props) => {
         autoplay={true}
           ref={(c) => {_carousel = c; }}
           data={currentNews.banners}
-    
+        //   autoplayDelay={2000}
+          autoplayInterval={15000}
+
           renderItem={_renderItem}
           sliderHeight={50}
           sliderWidth={Dimensions.get("window").width}
           itemWidth={Dimensions.get("window").width}
         />
-        <View style={{backgroundColor:"#ddd",alignSelf:"flex-end",paddingHorizontal:30,borderTopLeftRadius:17,borderBottomLeftRadius:17}}><Text style={{color:"#000",paddingVertical:10,fontSize:14,fontWeight:"bold"}}>{`${currentNews.noOfBanners} Breaking News`}
+        <View style={{backgroundColor:"#0a4958",alignSelf:"flex-end",paddingHorizontal:30,borderTopLeftRadius:20,borderBottomLeftRadius:20,opacity:0.77}}><Text style={{color:"#ddd",paddingVertical:10,fontSize:14,fontWeight:"bold"}}>{`${currentNews.noOfBanners} Breaking News`}
             </Text>
             </View>
-        </View>:null}
+        </View>:<View style={{justifyContent:"center",alignItems:"center"}}><ActivityIndicator color="#ddd" size={"large"}/></View>}
        
         </View>
     );

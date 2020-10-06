@@ -5,7 +5,7 @@ import { BLACKISH_GREY, GREY } from '../colorConstant/color';
 export const styles = StyleSheet.create({
     container: {
         flex:1  ,
-        backgroundColor:"#f7f8fc"
+        // backgroundColor:"rgb(247,248,252)"
         // borderWidth: 1,
         // borderRadius: 5,
         // borderColor: "#ddd",

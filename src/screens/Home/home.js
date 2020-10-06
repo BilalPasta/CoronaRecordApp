@@ -1,6 +1,6 @@
 
 import React,{useEffect,useState} from 'react';
-import { Text, View, Animated, StyleSheet ,Image,Dimensions} from 'react-native';
+import { Text, View, Animated, StyleSheet ,Image,Dimensions,TouchableOpacity} from 'react-native';
 import {SKY_BLUE} from '../../shared/colorConstant/color';
 import StickyParallaxHeader from 'react-native-sticky-parallax-header';
 import {ConciseInfo,BoxView,LineGraph,Table,PieChartComponent,Stories,CurrentNews} from '../../shared'
@@ -27,7 +27,7 @@ import {ConciseInfo,BoxView,LineGraph,Table,PieChartComponent,Stories,CurrentNew
     foreground: {
       flex: 1,
       // backgroundColor:"#41cbc7",
-      backgroundColor:"#4fa2d2",
+      backgroundColor:"#01b6ad",
       justifyContent: 'center',
       alignItems:"center",
 
@@ -40,17 +40,18 @@ import {ConciseInfo,BoxView,LineGraph,Table,PieChartComponent,Stories,CurrentNew
       paddingBottom: 7
     },
     headerWrapper: {
-      backgroundColor: "#4fa2d2",
+      backgroundColor: "#01b6ad",
       width: '100%',
       flexDirection:"row",
-      paddingHorizontal: 24,
+      // paddingHorizontal: 24,
       paddingBottom: 25,
       flexDirection: 'row',
-      alignItems: 'center'
+      alignItems: 'center',
     },
     headerTitle: {
       fontSize: 18,
-      color: 'white',
+      flex:1,
+      color: '#ddd',
       margin: 12,
       fontWeight:"bold"
     },
@@ -59,11 +60,12 @@ import {ConciseInfo,BoxView,LineGraph,Table,PieChartComponent,Stories,CurrentNew
     },
     tabTextContainerStyle: {
       backgroundColor: 'transparent',
+      paddingHorizontal:10,
       
       borderRadius: 18
     },
     tabTextContainerActiveStyle: {
-      backgroundColor: SKY_BLUE
+      backgroundColor: "#d8c8b5"
     },
     tabText: {
       fontSize: 16,
@@ -75,7 +77,8 @@ import {ConciseInfo,BoxView,LineGraph,Table,PieChartComponent,Stories,CurrentNew
   })
    
   export const HomeScreen =({ navigation })=> {
-  const [scroll] = useState(new Animated.Value(0))
+  const [scroll] = useState(new Animated.Value(0));
+  const [key,Refresh]=useState(Math.random())
     
    
     useEffect(()=>{
@@ -99,7 +102,7 @@ import {ConciseInfo,BoxView,LineGraph,Table,PieChartComponent,Stories,CurrentNew
       return (
         <View style={styles.foreground}>
           <Animated.View style={{ opacity: titleOpacity }}>
-            <Text style={{color:"#fff",fontWeight:"bold",fontSize:30,textAlign:"center"}}>Latest Update</Text>
+            <Text style={{color:"#ddd",fontWeight:"bold",fontSize:30,textAlign:"center"}}>Latest Update</Text>
             {/* <Text style={styles.message}>Current News dewdsfdsfds fskdjbfjhkdsb skdjnfkjdsbf sdfkjbdskjfb dsfkjnfkjsdb asdfjnfakjdsbfn wfdlknflsnf dsflknlkn dfslknflkn
             sdfgd
             dfg
@@ -122,14 +125,14 @@ import {ConciseInfo,BoxView,LineGraph,Table,PieChartComponent,Stories,CurrentNew
     }
 
     const renderSymptoms=()=>{
-      return(<View style={{flex:1}}>
+      return(<View style={{height:700}}>
 
-        <View  style={{width:"85%",backgroundColor:"#0284fc",padding:8,borderTopRightRadius:8,borderBottomRightRadius:8,marginTop:10}}><Text style={{textAlign:"center",fontSize:15,color:"#fff",fontWeight:"bold"}}>        Typical Symptoms
+        <View  style={{width:"85%",backgroundColor:"#d8c8b5",padding:8,borderTopRightRadius:18,borderBottomRightRadius:18,marginTop:10}}><Text style={{textAlign:"center",fontSize:15,color:"#fff",fontWeight:"bold"}}>        Typical Symptoms
 </Text></View>
       <View style={{width:"90%",alignSelf:"center"}}>
-        <Text style={{fontSize:15,color:"#000",textAlign:"center"}}>COVID-19 typically causes flu-like symptoms including a fever and cough.
+        <Text style={{fontSize:15,color:"#494949",textAlign:"center",fontWeight:"bold"}}>COVID-19 typically causes flu-like symptoms including a fever and cough.
 </Text>
-<Text>In some patients - particularly the elderly and others with other chronic health conditions - these symptoms can develop into pneumonia, with chest tightness, chest pain, and shortness of breath.
+<Text style={{color:"#494949"}}>In some patients - particularly the elderly and others with other chronic health conditions - these symptoms can develop into pneumonia, with chest tightness, chest pain, and shortness of breath.
 
 It seems to start with a fever, followed by a dry cough.
 
@@ -138,7 +141,7 @@ After a week, it can lead to shortness of breath, with about 20% of patients req
 Notably, the COVID-19 infection rarely seems to cause a runny nose, sneezing, or sore throat (these symptoms have been observed in only about 5% of patients). Sore throat, sneezing, and stuffy nose are most often signs of a cold.
   </Text>
   </View>
-  <View  style={{width:"85%",backgroundColor:"#0284fc",padding:8,borderRadius:8,marginTop:10,alignSelf:"center"}}>
+  <View  style={{width:"85%",backgroundColor:"#01b6ad",padding:15,borderTopLeftRadius:25,marginTop:10,alignSelf:"flex-end"}}>
     <Text style={{textAlign:"center",fontSize:15,color:"#fff",fontWeight:"bold"}}> Pre-existing conditions </Text> 
     <View style={{width:"90%"}}>
 <Text style={{color:"#fff"}}>
@@ -160,7 +163,7 @@ That said, some otherwise healthy people do seem to develop a severe form of pne
 
     const renderInfo=()=>{
 
-      return(<View>
+      return(<View >
         {/* <Image source={require("../../../assets/loader.gif")} /> */}
         <ConciseInfo >
         {/* <BoxView
@@ -178,6 +181,7 @@ That said, some otherwise healthy people do seem to develop a severe form of pne
         <Table {...navigation}/>
 
         </ConciseInfo>
+        
 
 
         </View>)
@@ -198,11 +202,17 @@ const renderStories=()=>{
    
       return (
         <View style={styles.headerWrapper}>
-          <Animated.View style={{ opacity }}>
+          <Animated.View style={{ opacity,flex:1}}>
           <Text style={styles.headerTitle}
-          //  onPress={()=>navigation.openDrawer()}
           > Corona Updates</Text>
+        
           </Animated.View>
+          <TouchableOpacity 
+          onPress={()=>Refresh(Math.random())}
+          style={{backgroundColor:"red",padding:10,marginVertical:4,borderTopLeftRadius:24,borderBottomLeftRadius:24,backgroundColor:"#ddd",alignSelf:"center"}}>
+          <Text style={{justifyContent:"flex-end",fontSize:15,fontWeight:"bold",color:"#0a4958"}}
+          > Update me</Text>
+          </TouchableOpacity>
         </View>
       )
     }
@@ -210,6 +220,7 @@ const renderStories=()=>{
    
       return (
         <StickyParallaxHeader
+        key={key}
           foreground={renderForeground()}
           header={renderHeader()}
           parallaxHeight={200}
@@ -236,7 +247,8 @@ const renderStories=()=>{
           tabTextStyle={styles.tabText}
           tabTextContainerStyle={styles.tabTextContainerStyle}
           tabTextContainerActiveStyle={styles.tabTextContainerActiveStyle}
-          tabsContainerBackgroundColor={"#4972a6"}
+          tabsContainerBackgroundColor=  {"#0a4958"}  
+          // {"#d8c8b5"}
           tabsWrapperStyle={styles.tabsWrapper}
         >
         </StickyParallaxHeader>)

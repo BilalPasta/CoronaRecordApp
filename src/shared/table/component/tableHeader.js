@@ -6,7 +6,7 @@ const headerData=["Country,\nOther ","Total\nCases ","New\nCases ","Total\nDeath
 
 export  const TableHeader=()=>{
 return (<View style={styles.row} horizontal={true}>
-{headerData.map((value,index)=><View key={index} style={{ borderRightWidth: 1, borderColor: "#ddd",flex:1 }}>
+{headerData.map((value,index)=><View key={index} style={{ borderRightWidth: 1, borderColor: "#ddd",flex:index==0?1.5:1 }}>
             <Text  style={{  textAlign: "center",fontSize:10,fontWeight:"bold" }} >{value}</Text>
         </View>)
 }
